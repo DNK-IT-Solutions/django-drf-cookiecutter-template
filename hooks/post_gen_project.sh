@@ -23,4 +23,8 @@ make analyze-source-code
 echo Running test...
 make test
 
+echo Git initializing
+git init
+git add --all && git commit -m"Init django-project"
+
 echo Done
