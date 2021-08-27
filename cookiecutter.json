@@ -5,5 +5,5 @@
     "project_version": "0.0.1",
     "project_conf_app": "main",
     "author": "",
-    "use_sentry": ["y", "n"]
+    "use_sentry": ["yes", "no"]
 }
