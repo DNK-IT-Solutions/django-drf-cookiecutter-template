@@ -36,7 +36,6 @@ ALLOWED_HOSTS = []
 # Application definition
 INSTALLED_APPS_3RD_PARTY = [
     "rest_framework",
-    "django_filters",
     "drf_yasg",
 ]
 
