@@ -1,6 +1,6 @@
 install-poetry:
 	@if ! python -c "import poetry" &> /dev/null; then \
-		curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py | python -; \
+		pip install poetry; \
 	fi
 
 install-common-deps: install-poetry
