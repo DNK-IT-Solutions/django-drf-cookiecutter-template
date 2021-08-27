@@ -40,18 +40,6 @@ tests = ["coverage[toml] (>=5.0.2)", "hypothesis", "pympler", "pytest (>=4.3.0)"
 tests_no_zope = ["coverage[toml] (>=5.0.2)", "hypothesis", "pympler", "pytest (>=4.3.0)", "six", "mypy", "pytest-mypy-plugins"]
 
 [[package]]
-name = "auditlog"
-version = "0.0.5"
-description = "Based on django-auditlog with additional features for auditing logs."
-category = "main"
-optional = false
-python-versions = "*"
-
-[package.dependencies]
-django-jsonfield = ">=1.0.0"
-python-dateutil = "2.6.0"
-
-[[package]]
 name = "bandit"
 version = "1.7.0"
 description = "Security oriented static analyser for python code."
@@ -186,6 +174,18 @@ sqlparse = ">=0.2.2"
 [package.extras]
 argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
+
+[[package]]
+name = "django-auditlog"
+version = "1.0a1"
+description = "Audit log app for Django"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+django-jsonfield = ">=1.0.0"
+python-dateutil = ">=2.6.0"
 
 [[package]]
 name = "django-environ-2"
@@ -863,35 +863,6 @@ optional = false
 python-versions = ">=3.5"
 
 [[package]]
-name = "sentry-sdk"
-version = "1.3.1"
-description = "Python client for Sentry (https://sentry.io)"
-category = "main"
-optional = false
-python-versions = "*"
-
-[package.dependencies]
-certifi = "*"
-urllib3 = ">=1.10.0"
-
-[package.extras]
-aiohttp = ["aiohttp (>=3.5)"]
-beam = ["apache-beam (>=2.12)"]
-bottle = ["bottle (>=0.12.13)"]
-celery = ["celery (>=3)"]
-chalice = ["chalice (>=1.16.0)"]
-django = ["django (>=1.8)"]
-falcon = ["falcon (>=1.4)"]
-flask = ["flask (>=0.11)", "blinker (>=1.1)"]
-httpx = ["httpx (>=0.16.0)"]
-pure_eval = ["pure-eval", "executing", "asttokens"]
-pyspark = ["pyspark (>=2.4.4)"]
-rq = ["rq (>=0.6)"]
-sanic = ["sanic (>=0.8)"]
-sqlalchemy = ["sqlalchemy (>=1.2)"]
-tornado = ["tornado (>=5)"]
-
-[[package]]
 name = "six"
 version = "1.16.0"
 description = "Python 2 and 3 compatibility utilities"
@@ -995,7 +966,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "4887ee3370fada4d0a9148ec87e87abfe988b8f15ef712724daf8b43194737da"
+content-hash = "9d54051c8dd7bb38c8ef0edbf222bb4811acef9fe60c0e8a947b76d6fbd53ee8"
 
 [metadata.files]
 appdirs = [
@@ -1013,9 +984,6 @@ astor = [
 attrs = [
     {file = "attrs-21.2.0-py2.py3-none-any.whl", hash = "sha256:149e90d6d8ac20db7a955ad60cf0e6881a3f20d37096140088356da6c716b0b1"},
     {file = "attrs-21.2.0.tar.gz", hash = "sha256:ef6aaac3ca6cd92904cdd0d83f629a15f18053ec84e6432106f7a4d04ae4f5fb"},
-]
-auditlog = [
-    {file = "auditlog-0.0.5.tar.gz", hash = "sha256:0721fd1ea5b866cfe55ddd6e8d60a034ddecf95ab1b3a4e83930fccf11e48c51"},
 ]
 bandit = [
     {file = "bandit-1.7.0-py3-none-any.whl", hash = "sha256:216be4d044209fa06cf2a3e51b319769a51be8318140659719aa7a115c35ed07"},
@@ -1109,6 +1077,9 @@ coverage = [
 django = [
     {file = "Django-3.2.6-py3-none-any.whl", hash = "sha256:7f92413529aa0e291f3be78ab19be31aefb1e1c9a52cd59e130f505f27a51f13"},
     {file = "Django-3.2.6.tar.gz", hash = "sha256:f27f8544c9d4c383bbe007c57e3235918e258364577373d4920e9162837be022"},
+]
+django-auditlog = [
+    {file = "django-auditlog-1.0a1.tar.gz", hash = "sha256:bd09ffd19e92c3fe12780ed197f451cd565e1128f69c406e5e1e12f521d7958e"},
 ]
 django-environ-2 = [
     {file = "django-environ-2-2.1.0.tar.gz", hash = "sha256:231446717e345a9b27be5939ebd0435feb5b9a76e8234555f18c9a290f35df3f"},
