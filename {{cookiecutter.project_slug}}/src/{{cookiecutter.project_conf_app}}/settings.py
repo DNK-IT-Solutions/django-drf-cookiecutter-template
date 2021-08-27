@@ -132,7 +132,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-{%- if use_sentry=="y" -%}
+{%- if cookiecutter.use_sentry=="yes" -%}
 # SENTRY CONF
 SENTRY_DSN = env.str("SENTRY_DSN")
 if not DEBUG and SENTRY_DSN:
