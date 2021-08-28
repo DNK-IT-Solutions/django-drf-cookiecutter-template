@@ -37,6 +37,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS_3RD_PARTY = [
     "rest_framework",
     "drf_yasg",
+    "django_nose",
+    "auditlog",
 ]
 
 INSTALLED_APPS_CUSTOM = [
