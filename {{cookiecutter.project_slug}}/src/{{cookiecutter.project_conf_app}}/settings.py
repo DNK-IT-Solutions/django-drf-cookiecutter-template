@@ -11,8 +11,10 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+from typing import List
 
 from environ import Env
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 
@@ -30,7 +32,7 @@ SECRET_KEY = env.str("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DEBUG", default=False)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS: List[str] = []
 
 
 # Application definition
@@ -132,9 +134,8 @@ USE_TZ = True
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
-
 {% if cookiecutter.use_sentry=="yes" %}
+
 # SENTRY CONF
 SENTRY_DSN = env.str("SENTRY_DSN")
 if not DEBUG and SENTRY_DSN:
@@ -143,9 +144,8 @@ if not DEBUG and SENTRY_DSN:
 
     sentry_sdk.init(dsn=SENTRY_DSN, integrations=[DjangoIntegration()])
 # END SENTRY CONF
+
 {% endif %}
-
-
 # TEST CONF
 TEST_RUNNER = "django_nose.NoseTestSuiteRunner"
 
@@ -184,9 +184,11 @@ REST_FRAMEWORK = {
 
 
 # STATIC CONF
-STATIC_URL = "/static/"
-STATIC_ROOT = env("DJANGO_STATIC_ROOT")
+STATIC_URL: str = "/static/"
+STATIC_ROOT: str = env("DJANGO_STATIC_ROOT")
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR.joinpath("media")
 # END STATIC CONF
+
+AUTH_USER_MODEL = "users.User"
