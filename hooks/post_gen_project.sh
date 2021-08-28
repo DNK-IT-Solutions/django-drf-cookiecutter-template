@@ -14,6 +14,7 @@ echo Collecting static assets...
 ./manage.py collectstatic
 
 echo Running initial migrations...
+./manage.py makemigrations
 ./manage.py migrate
 
 cd ../
