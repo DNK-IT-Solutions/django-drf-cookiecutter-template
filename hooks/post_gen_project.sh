@@ -8,6 +8,10 @@ echo Creating and populating virtualenv..
 
 make install-deps
 
+{% if cookiecutter.use_sentry == "yes" %}
+poetry add sentry_sdk
+{% endif %}
+
 cd src
 
 echo Collecting static assets...
