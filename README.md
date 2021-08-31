@@ -1,13 +1,14 @@
 # django-drf-cookiecutter-template
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![GitHub last commit](https://img.shields.io/github/last-commit/DNK-IT-Solutions/django-drf-cookiecutter-template/main)](https://github.com/DNK-IT-Solutions/django-drf-cookiecutter-template/commits/main)
+![last build](https://github.com/DNK-IT-Solutions/django-drf-cookiecutter-template/actions/workflows/test_create_project.yml/badge.svg)
 
 
 [Django](https://www.djangoproject.com) + [DRF](https://www.django-rest-framework.org) + [Poetry](https://python-poetry.org) template for [cookiecutter](https://cookiecutter.readthedocs.io/)
 
 ## Dependencies:
  * [Python 3.9](https://www.python.org/downloads/release/python-390/)
- * 
+ * [pip]()
 
 ---
  
