@@ -1,0 +1,33 @@
+name: Test generate project from template
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  generate-project-from-template:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2.3.1
+      with:
+        persist-credentials: false
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    - name: git user config
+      run: |
+        git config --global user.email "user@example.com"
+        git config --global user.name "Example User"
+
+    - name: Install Dependencies
+      run: |
+        pip install cookiecutter poetry
+
+        poetry config virtualenvs.create false
+    - name: Create project from template
+      run: |
+        mkdir test_project
+        cd test_project ; cookiecutter  ../ --no-input project_name="test project" project_description="Test project description" author_name="Your Name" author_email="you@example.com" use_sentry="no"
