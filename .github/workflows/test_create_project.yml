@@ -4,11 +4,32 @@ on:
   push:
     branches:
       - main
+env:
+  DB_HOST: localhost
+  POSTGRES_PASSWORD: postgres
+  POSTGRES_PORT: 5432
+  POSTGRES_USER: postgres
+  POSTGRES_DB: test_project
 
 jobs:
   generate-project-from-template:
     runs-on: ubuntu-latest
-
+    services:
+      postgres:
+        image: postgres
+        env:
+          DB_HOST: localhost
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_PORT: 5432
+          POSTGRES_USER: postgres
+          POSTGRES_DB: test_project
+        ports:
+          - 5432:5432
+        options:
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
     steps:
     - uses: actions/checkout@v2.3.1
       with:
@@ -30,4 +51,10 @@ jobs:
     - name: Create project from template
       run: |
         mkdir test_project
-        cd test_project ; cookiecutter  ../ --no-input project_name="test project" project_description="Test project description" author_name="Your Name" author_email="you@example.com" use_sentry="no"
+        cd test_project ; cookiecutter  ../ --no-input \
+          project_name="test project" \
+          project_description="Test project description" \
+          author_name="Your Name" \
+          author_email="you@example.com" \
+          use_sentry="no" \
+          ENV_DATABASE_URL="psql://$POSTGRES_USER:$POSTGRES_PASSWORD@$DB_HOST:$POSTGRES_PORT/$POSTGRES_DB"
