@@ -27,7 +27,7 @@ schema_view = get_schema_view(
     openapi.Info(
         title="{{ cookiecutter.project_slug }} API",
         default_version="v1",
-        contact=openapi.Contact(email="{{ cookiecutter.author }}"),
+        contact=openapi.Contact(email="{{ cookiecutter.author_email }}"),
     ),
     public=True,
     permission_classes=(permissions.IsAuthenticatedOrReadOnly,),

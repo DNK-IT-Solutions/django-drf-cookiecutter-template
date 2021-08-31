@@ -1,4 +1,4 @@
-from {{cookiecutter.project_conf_app}}.types import URLList
+from {{cookiecutter.django_settings_package}}.types import URLList
 
 
 app_name = "users"
