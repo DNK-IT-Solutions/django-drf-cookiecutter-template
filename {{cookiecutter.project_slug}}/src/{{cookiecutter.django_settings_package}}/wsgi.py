@@ -1,5 +1,5 @@
 """
-WSGI config for {{cookiecutter.project_conf_app}} project.
+WSGI config for {{cookiecutter.django_settings_package}} project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -12,6 +12,6 @@ import os
 from django.core.wsgi import get_wsgi_application
 
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "{{cookiecutter.project_conf_app}}.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "{{cookiecutter.django_settings_package}}.settings")
 
 application = get_wsgi_application()
