@@ -10,7 +10,7 @@
 ## Dependencies:
  * [Python 3.9](https://www.python.org/downloads/release/python-390/)
  * [python-pip](https://pypi.org/project/pip/)
- * [PostgreSQL](https://www.postgresql.org)
+ * [PostgreSQL][postgres]
 
 
  
@@ -22,7 +22,7 @@
 
     Or in another way compatible with poetry
  2. Install [cookiecutter][cookiecutter] using [this instruction](https://cookiecutter.readthedocs.io/en/latest/installation.html)
- 3. Run [postgres](https://www.postgresql.org) server and create database for project
+ 3. Run [postgres][postgres] server and create database for project
  4. Create project from template:
     ```shell
     cookiecutter gh:DNK-IT-Solutions/django-drf-cookiecutter-template
@@ -49,6 +49,8 @@
     To run without asking for user input
  
     In one case or another - you need to set values for some parameters, the descriptions of which you can read [here](#Template-parameters)
+
+![quick_guide](https://user-images.githubusercontent.com/17884471/131993262-20807241-df82-4724-8e5b-e5cf481181d4.gif)
 
 
 ## Template parameters ##
@@ -130,3 +132,4 @@ More information can be found in the [pyproject.toml](./\{\{cookiecutter.project
 [django]: https://www.djangoproject.com
 [drf]: https://www.django-rest-framework.org
 [cookiecutter]: https://cookiecutter.readthedocs.io/
+[postgres]: https://www.postgresql.org
