@@ -44,32 +44,34 @@
         ENV_SECRET_KEY=<ENV_SECRET_KEY> \
         ENV_DATABASE_URL=<ENV_DATABASE_URL> \
         ENV_DJANGO_STATIC_ROOT=<ENV_DJANGO_STATIC_ROOT> \
-        ENV_SENTRY_DSN=<ENV_SENTRY_DSN>
+        ENV_SENTRY_DSN=<ENV_SENTRY_DSN> \
+        ENV_DJANGO_ALLOWED_HOSTS=<ENV_DJANGO_ALLOWED_HOSTS>
     ```
     To run without asking for user input
  
     In one case or another - you need to set values for some parameters, the descriptions of which you can read [here](#Template-parameters)
 
-![quick_guide](https://user-images.githubusercontent.com/17884471/131993262-20807241-df82-4724-8e5b-e5cf481181d4.gif)
+![clean display](https://user-images.githubusercontent.com/17884471/131993262-20807241-df82-4724-8e5b-e5cf481181d4.gif)
 
 
 ## Template parameters ##
 
-| Parameter name          | Required              | Description |
-| ----------------------- |:---------------------:|:----------- |
-| project_name            | :heavy_plus_sign:     | The name of the project. Will be used in the [README.md](./{{cookiecutter.project_slug}}/README.md) file. It also creates a default value for the `project_slug` variable from this value. |
-| project_slug            | :heavy_minus_sign:    | Used for the name of the root directory of the Django project, `[tool.poetry].name` value in [pyproject.toml][2], also as the default database name in the `ENV_DATABASE_URL` variable |
-| project_description     | :heavy_minus_sign:    | Used in [README.md](./{{cookiecutter.project_slug}}/README.md), `[tool.poetry].description` value in [pyproject.toml][2] |
-| project_version         | :heavy_minus_sign:    | Used as `[tool.poetry].version` value in [pyproject.toml][2] |
-| django_settings_package | :heavy_minus_sign:    | The name of the configuration django application (the application that stores the settings.py file) |
-| author_name             | :heavy_plus_sign:     | Used as part of `[tool.poetry].authors` value in [pyproject.toml][2] |
-| author_email            | :heavy_plus_sign:     | Used as part of `[tool.poetry].authors` value in [pyproject.toml][2], [drf-yasg][drf-yasg] contact email |
-| use_sentry              | :heavy_minus_sign:    | Determines whether [sentry][3] will be used in the project. If yes, [sentry-sdk][4] will be installed and configured |
-| ENV_DEBUG               | :heavy_minus_sign:    | Used to generate .env file. A boolean that turns on/off [debug mode][5] in django |
-| ENV_SECRET_KEY          | :heavy_minus_sign:    | Used to generate .env file. [Secret key][6] for django-project |
-| ENV_DATABASE_URL        | :heavy_minus_sign:    | Used to generate .env file. Link to connect to the database. Link to connect to the database. [This format][7] is used |
-| ENV_DJANGO_STATIC_ROOT  | :heavy_minus_sign:    | Used to generate .env file. Directory for storing [static files][8] |
-| ENV_SENTRY_DSN          | if use_sentry = "yes" | Used to generate .env file. [Sentry DSN][9] only if use_sentry = "yes" |
+| Parameter name           | Required              | Description |
+| ------------------------ |:---------------------:|:----------- |
+| project_name             | :heavy_plus_sign:     | The name of the project. Will be used in the [README.md](./{{cookiecutter.project_slug}}/README.md) file. It also creates a default value for the `project_slug` variable from this value. |
+| project_slug             | :heavy_minus_sign:    | Used for the name of the root directory of the Django project, `[tool.poetry].name` value in [pyproject.toml][2], also as the default database name in the `ENV_DATABASE_URL` variable |
+| project_description      | :heavy_minus_sign:    | Used in [README.md](./{{cookiecutter.project_slug}}/README.md), `[tool.poetry].description` value in [pyproject.toml][2] |
+| project_version          | :heavy_minus_sign:    | Used as `[tool.poetry].version` value in [pyproject.toml][2] |
+| django_settings_package  | :heavy_minus_sign:    | The name of the configuration django application (the application that stores the settings.py file) |
+| author_name              | :heavy_plus_sign:     | Used as part of `[tool.poetry].authors` value in [pyproject.toml][2] |
+| author_email             | :heavy_plus_sign:     | Used as part of `[tool.poetry].authors` value in [pyproject.toml][2], [drf-yasg][drf-yasg] contact email |
+| use_sentry               | :heavy_minus_sign:    | Determines whether [sentry][3] will be used in the project. If yes, [sentry-sdk][4] will be installed and configured |
+| ENV_DEBUG                | :heavy_minus_sign:    | Used to generate .env file. A boolean that turns on/off [debug mode][5] in django |
+| ENV_SECRET_KEY           | :heavy_minus_sign:    | Used to generate .env file. [Secret key][6] for django-project |
+| ENV_DATABASE_URL         | :heavy_minus_sign:    | Used to generate .env file. Link to connect to the database. Link to connect to the database. [This format][7] is used |
+| ENV_DJANGO_STATIC_ROOT   | :heavy_minus_sign:    | Used to generate .env file. Directory for storing [static files][8] |
+| ENV_SENTRY_DSN           | if use_sentry = "yes" | Used to generate .env file. [Sentry DSN][9] only if use_sentry = "yes" |
+| ENV_DJANGO_ALLOWED_HOSTS | :heavy_minus_sign:    | Used to generate .env file. Django [ALLOWED_HOSTS](https://docs.djangoproject.com/en/3.2/ref/settings/#allowed-hosts)
 
 [1]: https://cookiecutter.readthedocs.io/en/latest/advanced/template_extensions.html#random-string-extension
 [2]: ./{{cookiecutter.project_slug}}/pyproject.toml
