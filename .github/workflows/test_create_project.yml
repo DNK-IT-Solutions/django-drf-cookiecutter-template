@@ -57,4 +57,5 @@ jobs:
           author_name="Your Name" \
           author_email="you@example.com" \
           use_sentry="no" \
-          ENV_DATABASE_URL="psql://$POSTGRES_USER:$POSTGRES_PASSWORD@$DB_HOST:$POSTGRES_PORT/$POSTGRES_DB"
+          ENV_DATABASE_URL="psql://$POSTGRES_USER:$POSTGRES_PASSWORD@$DB_HOST:$POSTGRES_PORT/$POSTGRES_DB" \
+          ENV_DJANGO_ALLOWED_HOSTS="*"
