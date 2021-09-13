@@ -137,7 +137,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 {% if cookiecutter.use_sentry=="yes" %}
 
 # SENTRY CONF
-SENTRY_DSN = env.str("SENTRY_DSN")
+SENTRY_DSN = env.str("SENTRY_DSN", default=None)
 if not DEBUG and SENTRY_DSN:
     import sentry_sdk
     from sentry_sdk.integrations.django import DjangoIntegration
@@ -185,7 +185,7 @@ REST_FRAMEWORK = {
 
 # STATIC CONF
 STATIC_URL: str = "/static/"
-STATIC_ROOT: str = env("DJANGO_STATIC_ROOT")
+STATIC_ROOT: str = env("DJANGO_STATIC_ROOT", default=BASE_DIR.joinpath('static'))
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR.joinpath("media")
